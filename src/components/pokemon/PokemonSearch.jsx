@@ -7,10 +7,11 @@ function PokemonSearch() {
   const [text, setText] = useState('')
   const { pokemon, dispatch } = useContext(PokemonContext)
 
-  const updateSearchFilter = e => {
+  const updateSearchFilter = async e => {
     console.log('etv', e.target.value, 'text', text)
     setText(e.target.value)
-    const filteredPokemon = filterPokemon(pokemon, e.target.value)
+    const filteredPokemon = await filterPokemon(e.target.value)
+    console.log('filteredPokemon', filteredPokemon)
     dispatch({ type: 'FILTER_POKEMON', payload: filteredPokemon })
   }
 

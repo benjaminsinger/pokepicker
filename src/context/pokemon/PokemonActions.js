@@ -16,9 +16,13 @@ export const fetchSinglePokemon = async id => {
   return response.data
 }
 
-export const filterPokemon = (pokes, text) => {
-  const filteredPokemon = pokes.filter(p => p.name.includes(text))
-  console.log(filteredPokemon, text)
+export const filterPokemon = async text => {
+  const response = await apiRequestObject.get(`/generation/1`)
+  console.log('response in filterOkemon func')
+  const filteredPokemon = await response.data.pokemon_species.filter(p =>
+    p.name.includes(text)
+  )
+  // console.log(filteredPokemon, text)
   return {
     pokemon: filteredPokemon,
     filter: text,
