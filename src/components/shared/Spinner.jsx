@@ -1,7 +1,7 @@
 function Spinner() {
   return (
     <img
-      src='/spinner.gif'
+      src='/pokeball.gif'
       style={{ width: '100px', height: 'auto', margin: 'auto' }}
       alt='loading spinner icon'
     />
