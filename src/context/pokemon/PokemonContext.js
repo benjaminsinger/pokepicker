@@ -4,10 +4,16 @@ import PokemonReducer from './PokemonReducer'
 const PokemonContext = createContext()
 
 export const PokemonProvider = ({ children }) => {
-  const initialState = { pokemon: [], pokeperson: {}, loading: true }
+  const initialState = {
+    pokemon: [],
+    pokeperson: {},
+    loading: true,
+    filter: '',
+  }
   const [state, dispatch] = useReducer(PokemonReducer, initialState)
+
   return (
-    <PokemonContext.Provider value={{ state, dispatch }}>
+    <PokemonContext.Provider value={{ ...state, dispatch }}>
       {children}
     </PokemonContext.Provider>
   )

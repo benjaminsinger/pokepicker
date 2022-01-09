@@ -7,6 +7,14 @@ const PokemonReducer = (state, action) => {
         loading: false,
       }
       break
+    case 'FILTER_POKEMON':
+      return {
+        ...state,
+        pokemon: action.payload.pokemon,
+        filter: action.payload.filter,
+        loading: false,
+      }
+      break
     case 'GET_POKEPERSON':
       return {
         ...state,
