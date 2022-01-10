@@ -28,6 +28,12 @@ const PokemonReducer = (state, action) => {
         loading: true,
       }
       break
+    case 'CLEAR_FILTER':
+      return {
+        ...state,
+        filter: action.payload,
+      }
+      break
     default:
       return state
       break

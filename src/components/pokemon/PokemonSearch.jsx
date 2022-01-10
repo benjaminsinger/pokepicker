@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import PokemonContext from '../../context/pokemon/PokemonContext'
 import Spinner from '../layout/shared/Spinner'
 import { filterPokemon } from '../../context/pokemon/PokemonActions'
@@ -6,6 +6,10 @@ import { filterPokemon } from '../../context/pokemon/PokemonActions'
 function PokemonSearch() {
   const [text, setText] = useState('')
   const { dispatch, pokemon, filter } = useContext(PokemonContext)
+
+  useEffect(() => {
+    if (filter !== '') setText(filter)
+  }, [])
 
   /* function to update the pokemon available via state in PokemonReducer.js */
   const updateSearchFilter = async e => {
@@ -37,16 +41,18 @@ function PokemonSearch() {
   return (
     <form onSubmit={catchSubmit} className='mx-auto drop-shadow-md'>
       <input
-        className='rounded-l-lg p-4 mr-0 text-gray-800 border-gray-200 bg-white'
-        placeholder='Filter Pokémon'
+        className='rounded-md p-4 mr-0 border-4 block text-blue-700 border-blue-700 bg-white w-100 flex'
+        placeholder='Type To Filter Pokémon'
         value={text}
         onChange={e => updateSearchFilter(e)}
         aria-describedby='filterInstructions'
       />
-      <button className='px-8 rounded-r-lg bg-yellow-400  text-blue-700 font-bold p-4'>
+      {/* <button className='px-8 rounded-r-lg bg-yellow-400  text-blue-700 font-bold p-4'>
         Filter 'em all
-      </button>
-      <p id='filterInstructions' className='invisible'></p>
+      </button> */}
+      <p id='filterInstructions' className='invisible'>
+        Type to filter Pokémon
+      </p>
     </form>
   )
 }

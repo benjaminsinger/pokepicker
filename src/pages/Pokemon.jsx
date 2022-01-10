@@ -23,9 +23,6 @@ function Pokemon() {
   } = pokeperson
 
   useEffect(() => {
-    // reset pokemon state
-    // dispatch({ type: 'GET_POKEMON', payload: [] })
-    // dispatch({ type: 'FILTER_POKEMON', payload: { pokemon: [], filter: '' } })
     const getPokeman = async () => {
       const pokeman = await fetchSinglePokemon(params.name)
       console.log('pokeman', pokeman)
@@ -104,7 +101,7 @@ function Pokemon() {
           </p>
         </div>
         <span
-          className='container mx-auto text-8xl font-bold relative block transform break-all md:break-normal mt-10 text-blue-600 text-white'
+          className='container mx-auto text-5xl md:text-8xl font-bold relative block transform break-all md:break-normal mt-10 text-blue-600 text-white'
           aria-hidden='true'
         >
           {names && names.map(n => `${n.name}`).join(' ')}
