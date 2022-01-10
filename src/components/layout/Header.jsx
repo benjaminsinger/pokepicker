@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <header
-      className='px-2 py-4 border-b-yellow-400 border-b-2 relative'
+      className='px-2 py-4 border-b-yellow-500 border-b-4 relative'
       style={{ backgroundColor: '#f9d53e' }}
     >
       <div className='container flex justify-between align-middle mx-auto'>
         <img
           className='inline-block'
-          src='pokepicker.png'
+          src='/pokepicker.png'
           style={{ maxWidth: '200px', height: 'auto' }}
           alt='PokéPicker App Icon'
         />

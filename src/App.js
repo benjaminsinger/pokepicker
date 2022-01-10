@@ -13,12 +13,12 @@ function App() {
       <Router>
         <div>
           <Header />
-          <main id='main' className='main px-3 py-10 bg-gray-100'>
-            <div className='container mx-auto'>
+          <main id='main' className='main'>
+            <div className=' mx-auto'>
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
-                <Route path='/pokemon/:id' element={<Pokemon />} />
+                <Route path='/pokemon/:name' element={<Pokemon />} />
                 <Route path='/*' element={<NotFound />} />
               </Routes>
             </div>

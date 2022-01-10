@@ -23,7 +23,7 @@ function PokemonList() {
 
   return (
     <div>
-      <div className='pookemon flex flex-wrap my-8 content-between justify-start'>
+      <div className='pokemon-list flex flex-wrap my-8 content-between justify-start'>
         {pokemon && pokemon.map((p, i) => <PokemonItem key={i} poke={p} />)}
       </div>
     </div>
