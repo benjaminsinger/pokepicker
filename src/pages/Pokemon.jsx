@@ -79,14 +79,6 @@ function Pokemon() {
         className=' pb-10 md:pb-20  bg-blue-500 overflow-hidden px-5 md:pt-20'
       >
         <div className='container relative mx-auto z-10'>
-          {/* <h2 className='text-3xl drop-shadow-xl md:text-5xl mb-1 font-bold text-white'>
-            Headline here
-          </h2>
-          <p className='text-2xl mb-1 max-w-screen-md drop-shadow-xl font-bold md:text-2xl text-yellow-400'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
-            mollitia voluptatibus ea velit? Eveniet molestias qui facere amet
-            voluptatem fuga.
-          </p> */}
           <p className='text-5xl md:text-8xl text-white font-bold'>
             <span className='mb-3 block'>
               {types &&

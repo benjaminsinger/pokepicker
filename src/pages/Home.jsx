@@ -47,8 +47,8 @@ function Home() {
               Welcome to PokéPicker {'\u2728'}
             </h1>
             <p className='text-2xl mb-1 leading-tight max-w-screen-md drop-shadow-xl font-bold md:text-3xl text-yellow-400'>
-              Filter by name, type and more! Or select a Pokémon from the list
-              below to find out more about it.
+              Filter your favourite Pokémon by name! Or select a Pokémon from
+              the list below to find out more about it.
             </p>
           </div>
           <button

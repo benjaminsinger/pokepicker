@@ -27,8 +27,7 @@ function About() {
             </h1>
             <p className='text-2xl mb-1 leading-tight max-w-screen-md drop-shadow-xl font-bold md:text-3xl text-yellow-400'>
               PokéPicker is an app to discover more about all 151 original
-              Pokémon. Filterable by name and type - each even has their own
-              page.
+              Pokémon. Filterable by name - each even has their own page.
             </p>
           </div>
         </div>

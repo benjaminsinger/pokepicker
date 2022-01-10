@@ -41,6 +41,7 @@ export const fetchSinglePokemon = async name => {
   return { ...pokemon.data, ...description.data }
 }
 
+/* TO DO - Filter by type */
 // export const filterByType = async type => {
 //   const response = await apiRequestObject.get(`/pokemon/${type}`)
 // }
@@ -64,6 +65,7 @@ export const filterPokemon = async text => {
   }
 }
 
+/* getHabitat emoji for Pokemon.jsx */
 export const getHabitat = habitat => {
   switch (habitat) {
     case 'sea':
