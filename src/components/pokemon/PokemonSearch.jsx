@@ -5,11 +5,11 @@ import { filterPokemon } from '../../context/pokemon/PokemonActions'
 
 function PokemonSearch() {
   const [text, setText] = useState('')
-  const { dispatch } = useContext(PokemonContext)
+  const { dispatch, pokemon, filter } = useContext(PokemonContext)
 
   /* function to update the pokemon available via state in PokemonReducer.js */
   const updateSearchFilter = async e => {
-    const txt = e.target.value.toLowerCase().replace(/\s/g, '')
+    const txt = e.target.value.trim().toLowerCase().replace(/\s/g, '')
 
     // set local State
     setText(txt)
@@ -32,17 +32,19 @@ function PokemonSearch() {
     console.log('caught submit attempt')
   }
 
+  if (pokemon.length === 0 && filter === '') return ''
+
   return (
     <form onSubmit={catchSubmit} className='mx-auto drop-shadow-md'>
       <input
         className='rounded-l-lg p-4 mr-0 text-gray-800 border-gray-200 bg-white'
-        placeholder='Find Pokémon By Name'
+        placeholder='Filter Pokémon'
         value={text}
         onChange={e => updateSearchFilter(e)}
         aria-describedby='filterInstructions'
       />
       <button className='px-8 rounded-r-lg bg-yellow-400  text-blue-700 font-bold p-4'>
-        Find 'em
+        Filter 'em all
       </button>
       <p id='filterInstructions' className='invisible'></p>
     </form>

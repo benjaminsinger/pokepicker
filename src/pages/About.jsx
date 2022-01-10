@@ -1,7 +1,7 @@
 function About() {
   return (
     <>
-      <div className='bg-brown overflow-hidden relative py-10 lg:py-14 px-5 bg-blue-500'>
+      <div className='hero overflow-hidden relative py-10 lg:py-14 px-5 bg-blue-500'>
         <div className='container mx-auto'>
           <div
             className='select-none'
@@ -27,7 +27,7 @@ function About() {
             </h1>
             <p className='text-2xl mb-1 leading-tight max-w-screen-md drop-shadow-xl font-bold md:text-3xl text-yellow-400'>
               PokéPicker is an app to discover more about all 151 original
-              pokemon. Filterable by name, and type - each even has their own
+              Pokémon. Filterable by name and type - each even has their own
               page.
             </p>
           </div>

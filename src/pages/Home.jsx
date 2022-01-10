@@ -1,7 +1,18 @@
+import { useReducer, useContext } from 'react'
 import PokemonSearch from '../components/pokemon/PokemonSearch'
 import PokemonList from '../components/pokemon/PokemonList'
+import { fetchPokemon } from '../context/pokemon/PokemonActions'
+import PokemonContext from '../context/pokemon/PokemonContext'
 
 function Home() {
+  const { dispatch, pokemon } = useContext(PokemonContext)
+
+  const catchEmAll = async () => {
+    console.log('getting em all')
+    const response = await fetchPokemon()
+    dispatch({ type: 'GET_POKEMON', payload: response })
+  }
+
   return (
     <>
       <div className='overflow-hidden relative py-10 lg:py-14 px-5 bg-blue-500'>
@@ -39,8 +50,11 @@ function Home() {
               below to find out more about it.
             </p>
           </div>
-          <button className='relative transition-colors mt-5 md:text-1xl bg-yellow-400 hover:bg-yellow-400 text-blue-700 font-bold py-3 px-4 border-b-4 border-yellow-600 hover:border-yellow-500 rounded'>
-            Catch 'em all!
+          <button
+            onClick={catchEmAll}
+            className='relative transition-colors mt-5 md:text-1xl bg-yellow-400 hover:bg-yellow-400 text-blue-700 font-bold py-3 px-4 border-b-4 border-yellow-600 hover:border-yellow-500 rounded'
+          >
+            Catch 'em All!
           </button>
         </div>
       </div>

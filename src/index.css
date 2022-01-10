@@ -16,3 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
 }
+
+::selection {
+  background:#ffcd00aa;
+  color: #3b82f6
+}

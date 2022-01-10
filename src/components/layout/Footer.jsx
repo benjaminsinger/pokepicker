@@ -7,7 +7,10 @@ function Footer() {
     <div className='px-2 py-20 border-b-yellow-500 border-b-4 relative'>
       <div className='container mx-auto flex flex-col center items-center content-center text-center'>
         <img src='/pokepicker.png' alt='Poképicker logo' />
-        <p className='text-gray-400 mt-1'>Built By Ben Singer</p>
+        <p className='text-gray-400 mt-1'>
+          <strong>Design and build</strong> by <strong>Ben Singer</strong>{' '}
+          {date}
+        </p>
         <ul className='social-icons w-1/6 flex flex-row justify-around text-5xl mt-4'>
           <a
             aria-label='visit my portolio site'

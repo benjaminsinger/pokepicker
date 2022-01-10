@@ -1,24 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import PokemonContext from '../../context/pokemon/PokemonContext'
-import { fetchPokemon } from '../../context/pokemon/PokemonActions'
 import PokemonItem from './PokemonItem'
 import Spinner from '../layout/shared/Spinner'
 
 function PokemonList() {
-  const { pokemon, loading, dispatch } = useContext(PokemonContext)
-
-  useEffect(() => {
-    dispatch({ type: 'SET_LOADING' })
-    const getPokemen = async () => {
-      const pokeFolk = await fetchPokemon()
-      dispatch({ type: 'GET_POKEMON', payload: pokeFolk.pokemon_species })
-    }
-    getPokemen()
-  }, [])
+  const { pokemon, loading } = useContext(PokemonContext)
 
   if (loading === true) {
-    return <Spinner />
+    return (
+      <>
+        <h2 className='font-bold text-3xl text-gray-900'>
+          Hit Catch 'em All! to get started
+        </h2>
+        <Spinner />
+      </>
+    )
   }
 
   return (

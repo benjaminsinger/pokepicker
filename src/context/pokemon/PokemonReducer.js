@@ -18,7 +18,7 @@ const PokemonReducer = (state, action) => {
     case 'GET_POKEPERSON':
       return {
         ...state,
-        pokeperson: action.payload.pokeperson,
+        pokeperson: action.payload,
         loading: false,
       }
       break
