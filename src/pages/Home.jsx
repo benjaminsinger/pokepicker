@@ -8,7 +8,7 @@ function Home() {
   const { dispatch } = useContext(PokemonContext)
 
   const catchEmAll = async () => {
-    dispatch({ type: 'GET_POKEPERSON', payload: '' })
+    // dispatch({ type: 'GET_POKEPERSON', payload: '' })
     console.log('getting em all')
     const response = await fetchPokemon()
     dispatch({ type: 'GET_POKEMON', payload: response })
@@ -53,7 +53,7 @@ function Home() {
           </div>
           <button
             onClick={catchEmAll}
-            className='relative transition-colors mt-5 md:text-1xl bg-yellow-400 hover:bg-yellow-400 text-blue-700 font-bold py-3 px-4 border-b-4 border-yellow-600 hover:border-yellow-500 rounded'
+            className='relative transition-colors mt-5 md:text-2xl bg-yellow-400 hover:bg-yellow-400 text-blue-700 font-bold py-3 px-4 border-b-4 border-yellow-600 hover:border-yellow-500 rounded'
           >
             Catch 'em All!
           </button>

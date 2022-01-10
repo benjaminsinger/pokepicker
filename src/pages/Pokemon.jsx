@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PokemonContext from '../context/pokemon/PokemonContext'
 import {
   fetchSinglePokemon,
@@ -25,7 +26,7 @@ function Pokemon() {
   useEffect(() => {
     const getPokeman = async () => {
       const pokeman = await fetchSinglePokemon(params.name)
-      console.log('pokeman', pokeman)
+      // console.log('pokeman', pokeman)
       dispatch({ type: 'GET_POKEPERSON', payload: pokeman })
     }
     getPokeman()
@@ -96,7 +97,15 @@ function Pokemon() {
                 `Habitat: ${habitat.name} ${getHabitat(habitat.name)} `}
             </span>
             <span className='block text-yellow-400'>
-              {evolvesFrom && `Evolves from: ${evolvesFrom.name}`}
+              {evolvesFrom && `Evolves from: ${evolvesFrom.name}`}{' '}
+              {evolvesFrom && (
+                <Link
+                  class='hover:text-yellow-100 transition-colors'
+                  to={`/pokemon/${evolvesFrom.name}`}
+                >
+                  ↗️
+                </Link>
+              )}
             </span>
           </p>
         </div>
