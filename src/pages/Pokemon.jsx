@@ -19,6 +19,7 @@ function Pokemon() {
     color,
     habitat,
     types,
+    evolves_from_species: evolvesFrom,
   } = pokeperson
 
   useEffect(() => {
@@ -93,10 +94,13 @@ function Pokemon() {
               {types &&
                 `Type: ${types.map(type => type.type.name).join(' + ')}`}
             </span>
-            <span className='mb-3 block'>
+            <span className='mb-3 block text-white'>
               {habitat &&
                 `Habitat: ${habitat.name} ${getHabitat(habitat.name)} `}
-            </span>{' '}
+            </span>
+            <span className='block text-yellow-400'>
+              {evolvesFrom && `Evolves from: ${evolvesFrom.name}`}
+            </span>
           </p>
         </div>
         <span
