@@ -5,9 +5,10 @@ import { fetchPokemon } from '../context/pokemon/PokemonActions'
 import PokemonContext from '../context/pokemon/PokemonContext'
 
 function Home() {
-  const { dispatch, pokemon } = useContext(PokemonContext)
+  const { dispatch } = useContext(PokemonContext)
 
   const catchEmAll = async () => {
+    dispatch({ type: 'GET_POKEPERSON', payload: '' })
     console.log('getting em all')
     const response = await fetchPokemon()
     dispatch({ type: 'GET_POKEMON', payload: response })

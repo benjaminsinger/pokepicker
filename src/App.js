@@ -11,7 +11,7 @@ function App() {
   return (
     <PokemonProvider>
       <Router>
-        <div>
+        <div className='overflow-hidden'>
           <Header />
           <main id='main' className='main'>
             <div className=' mx-auto'>

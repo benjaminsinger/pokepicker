@@ -11,7 +11,7 @@ const PokemonReducer = (state, action) => {
       return {
         ...state,
         pokemon: action.payload.pokemon,
-        filter: action.payload.text,
+        filter: action.payload.filter,
         loading: false,
       }
       break

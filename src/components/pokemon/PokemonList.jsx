@@ -7,7 +7,7 @@ import Spinner from '../layout/shared/Spinner'
 function PokemonList() {
   const { pokemon, loading } = useContext(PokemonContext)
 
-  if (loading === true) {
+  if (loading === true || pokemon.length === 0) {
     return (
       <>
         <h2 className='font-bold text-3xl text-gray-900'>

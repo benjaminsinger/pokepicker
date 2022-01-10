@@ -32,7 +32,7 @@ function PokemonSearch() {
     console.log('caught submit attempt')
   }
 
-  if (pokemon.length === 0 && filter === '') return ''
+  if (pokemon.length === 0 && filter === '') return false
 
   return (
     <form onSubmit={catchSubmit} className='mx-auto drop-shadow-md'>

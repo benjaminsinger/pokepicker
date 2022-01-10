@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom'
 function Footer() {
   const date = new Date().getFullYear()
   return (
-    <div className='px-2 py-20 border-b-yellow-500 border-b-4 relative'>
+    <footer className='px-2 py-20 border-b-yellow-500 border-b-4 relative z-10 bg-white'>
       <div className='container mx-auto flex flex-col center items-center content-center text-center'>
         <img src='/pokepicker.png' alt='Poképicker logo' />
         <p className='text-gray-400 mt-1'>
-          <strong>Design and build</strong> by <strong>Ben Singer</strong>{' '}
-          {date}
+          <strong>Designed and built by Ben Singer</strong>
         </p>
         <ul className='social-icons w-1/6 flex flex-row justify-around text-5xl mt-4'>
           <a
@@ -32,7 +31,7 @@ function Footer() {
           </a>
         </ul>
       </div>
-    </div>
+    </footer>
   )
 }
 

@@ -34,8 +34,11 @@ export const fetchPokemon = async () => {
 
 /* Fetch Single Pokemon Info for Pokemon Page Route */
 export const fetchSinglePokemon = async name => {
-  const response = await apiRequestObject.get(`/pokemon/${name}`)
-  return response.data
+  const [pokemon, description] = await Promise.all([
+    apiRequestObject.get(`/pokemon/${name}`),
+    apiRequestObject.get(`/pokemon-species/${name}`),
+  ])
+  return { ...pokemon.data, ...description.data }
 }
 
 // export const filterByType = async type => {

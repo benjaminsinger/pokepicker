@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <header
-      className='px-2 py-4 border-b-yellow-500 border-b-4 relative'
+      className='px-2 py-4 border-b-yellow-500 border-b-4 relative z-10'
       style={{ backgroundColor: '#f9d53e' }}
     >
       <div className='container flex justify-between align-middle mx-auto'>
