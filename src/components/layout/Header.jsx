@@ -6,12 +6,14 @@ function Header() {
       style={{ backgroundColor: '#f9d53e' }}
     >
       <div className='container flex justify-between align-middle mx-auto'>
-        <img
-          className='inline-block'
-          src='/pokepicker.png'
-          style={{ maxWidth: '200px', height: 'auto' }}
-          alt='PokéPicker App Icon'
-        />
+        <Link className='flex items-center pr-2' to='/'>
+          <img
+            className='inline-block'
+            src='/pokepicker.png'
+            style={{ width: '160px', maxWidth: '100%', height: 'auto' }}
+            alt='PokéPicker App Icon'
+          />
+        </Link>
         <nav className='flex h-100'>
           <Link
             className=' bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mr-2'

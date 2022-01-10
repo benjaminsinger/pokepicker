@@ -9,7 +9,7 @@ function PokemonSearch() {
 
   /* function to update the pokemon available via state in PokemonReducer.js */
   const updateSearchFilter = async e => {
-    const txt = e.target.value.toLowerCase()
+    const txt = e.target.value.toLowerCase().replace(/\s/g, '')
 
     // set local State
     setText(txt)
@@ -33,16 +33,18 @@ function PokemonSearch() {
   }
 
   return (
-    <form onSubmit={catchSubmit} className='mx-auto'>
+    <form onSubmit={catchSubmit} className='mx-auto drop-shadow-md'>
       <input
         className='rounded-l-lg p-4 mr-0 text-gray-800 border-gray-200 bg-white'
-        placeholder='filter by name'
+        placeholder='Find Pokémon By Name'
         value={text}
         onChange={e => updateSearchFilter(e)}
+        aria-describedby='filterInstructions'
       />
-      <button className='px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-4'>
+      <button className='px-8 rounded-r-lg bg-yellow-400  text-blue-700 font-bold p-4'>
         Find 'em
       </button>
+      <p id='filterInstructions' className='invisible'></p>
     </form>
   )
 }
