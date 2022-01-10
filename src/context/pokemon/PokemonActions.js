@@ -64,4 +64,33 @@ export const filterPokemon = async text => {
   }
 }
 
-export const searchPokemon = async text => {}
+export const getHabitat = habitat => {
+  switch (habitat) {
+    case 'sea':
+    case 'waters-edge':
+      return '🌊'
+      break
+    case 'mountain':
+      return '🗻'
+      break
+    case 'forest':
+    case 'grassland':
+      return '🌲'
+      break
+    case 'cave':
+      return '🚇'
+      break
+    case 'urban':
+      return '🏡'
+      break
+    case 'rough-terrain':
+      return '🌋'
+      break
+    case 'rare':
+      return '💍'
+      break
+    default:
+      return ''
+      break
+  }
+}
