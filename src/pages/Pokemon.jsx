@@ -92,7 +92,7 @@ function Pokemon() {
               {evolvesFrom && `Evolves from: ${evolvesFrom.name}`}{' '}
               {evolvesFrom && (
                 <Link
-                  class='hover:text-yellow-100 transition-colors'
+                  className='hover:text-yellow-100 transition-colors'
                   to={`/pokemon/${evolvesFrom.name}`}
                 >
                   ↗️

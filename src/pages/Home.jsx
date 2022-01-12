@@ -1,7 +1,10 @@
 import { useReducer, useContext } from 'react'
 import PokemonSearch from '../components/pokemon/PokemonSearch'
 import PokemonList from '../components/pokemon/PokemonList'
-import { fetchPokemon } from '../context/pokemon/PokemonActions'
+import {
+  fetchPokemon,
+  fetchAllPokemonDataToLocalDB,
+} from '../context/pokemon/PokemonActions'
 import PokemonContext from '../context/pokemon/PokemonContext'
 
 function Home() {
@@ -11,6 +14,7 @@ function Home() {
     // dispatch({ type: 'GET_POKEPERSON', payload: '' })
     console.log('getting em all')
     const response = await fetchPokemon()
+    // const response = await fetchAllPokemonDataToLocalDB()
     dispatch({ type: 'GET_POKEMON', payload: response })
   }
 

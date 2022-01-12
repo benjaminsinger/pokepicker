@@ -14,7 +14,23 @@ const apiRequestObject = axios.create({
  * API content depending on what is required.
  */
 
-const fetchPokemonData = async url => {
+export const fetchAllPokemonDataToLocalDB = async () => {
+  const response = await apiRequestObject.get(`/pokemon?limit=151`)
+  const { results } = await response.data
+  console.log('results, ', results[0])
+  /* my db.json server location */
+  const apiComplete = await apiRequestObject.post(
+    `http://localhost:5000/pokemon/${JSON.stringify(results[0].name)}`
+  )
+
+  console.log(apiComplete)
+  // const apiComplete = await apiRequestObject.post(
+  // `http://localhost:5000/pokemon/${JSON.stringify(results)}`
+  // )
+  // return apiComplete
+}
+
+export const fetchPokemonData = async url => {
   const response = await apiRequestObject.get(url)
   console.log(response.data)
   // return response.data
